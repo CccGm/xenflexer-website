@@ -1,184 +1,114 @@
-import React from "react";
 import { Divider } from "@mui/material";
-import Compension from "../assets/images/Featured icon.png";
-import operation from "../assets/images/Featured icon-1.png";
-import benmifits from "../assets/images/Featured icon-4.png";
-import collo from "../assets/images/Featured icon-5.png";
-import community from "../assets/images/Featured icon-6.png";
-import checkBox from "../assets/images/Check icon.png";
+import React from "react";
 
 export const Difference = () => {
+  function createData(feature, xenspire, others, benefits) {
+    return { feature, xenspire, others, benefits };
+  }
+
+  const rows = [
+    createData(
+      "COMPENSATION",
+      "Structured tiered fixed-fee program to define our share",
+      "% of Bill Rate",
+      "Value-based Pricing to bring complete Transparency"
+    ),
+    createData(
+      "OPERATIONS",
+      "Platform Driven Communication",
+      "Back & Forth Phone/Email",
+      "Transparency & Autonomy with defined SLAs to respect time"
+    ),
+    createData(
+      "BENEFITS",
+      "Ala Carte Services for Various Insurance types, 401K, Immigration, HSA etc.",
+      "Non-standard, but predominantly based on a tiered percentage cut",
+      "Flexibility to choose"
+    ),
+    createData(
+      "COLLOBORATION",
+      "Open Forum Structure to communicate with other Consultants. All Metrics are displayed openly across network.",
+      "Not Structured",
+      "Clear Expectations & Transparent Operations since Employer has lot to lose"
+    ),
+    createData(
+      "COMMUNITY",
+      "All Consultants are part of larger Xenspire Community program/network to yield all the benefits of being together.",
+      "NO COMMUNITY",
+      "Consultants can grow and improve during their Career. Opportunity to join Direct Client/Permanent Placement"
+    ),
+  ];
+
   return (
-    <div className="mx-40">
-      <div className="mt-16 grid grid-flow-row justify-start gap-4">
-        <text className="text-app-moss700 text-lg font-semibold">
-          Differences
+    <div className="px-40 py-10 bg-app-moss">
+      <div className="mt-5 grid grid-flow-row justify-center gap-4 text-center">
+        <text className="text-white text-4xl font-semibold">
+          Unleash the Power of Your Contracting Potential
         </text>
-        <text className="text-app-gray900 text-4xl font-semibold">
-          Unleash the Power of Your Contracting <br /> Potential
-        </text>
-        <text className="text-app-gray text-lg">
+        <text className="text-white text-lg">
           Earn more and manage freely with XenFlexer: Outshine the industry with
           tailored benefits,
           <br /> boundless growth, and a community that learns and prospers
           together.
         </text>
       </div>
-      <div className="py-10 grid grid-flow-col gap-16">
-        <div className="grid grid-flow-row gap-8">
-          <div className="grid grid-flow-col justify-start ">
-            <div>
-              <img src={Compension} />
-            </div>
-            <div className="grid grid-flow-row ml-4 gap-2 pt-2">
-              <text className="text-app-gray900 text-xl font-semibold">
-                Compensation
-              </text>
-              <text className="text-app-gray text-base ">
-                Value-based Pricing to bring complete Transparency
-              </text>
-            </div>
+      <div className="rounded-lg bg-white mt-10">
+        <div className="grid grid-cols-4 px-3 bg-app-table rounded-ss-lg rounded-se-lg py-2">
+          <div>
+            <text className="text-white font-semibold text-base">FEATURE</text>
           </div>
           <div className="grid grid-flow-col justify-start">
-            <div>
-              <img src={operation} />
-            </div>
-            <div className="grid grid-flow-row ml-4 gap-2 pt-2">
-              <text className="text-app-gray900 text-xl font-semibold">
-                Operations
-              </text>
-              <text className="text-app-gray text-base ">
-                Transparency & Autonomy with defined SLAs to respect time
-              </text>
-            </div>
+            <Divider
+              orientation="vertical"
+              sx={{ borderWidth: 1, borderColor: "#B9B9B9", marginRight: 3 }}
+            />
+            <text className="text-white font-semibold text-base">XENSPIRE</text>
           </div>
           <div className="grid grid-flow-col justify-start">
-            <div>
-              <img src={benmifits} />
-            </div>
-            <div className="grid grid-flow-row ml-4 gap-2 pt-2">
-              <text className="text-app-gray900 text-xl font-semibold">
-                Benefits
-              </text>
-              <text className="text-app-gray text-base ">
-                Flexibility to choose
-              </text>
-            </div>
+            <Divider
+              orientation="vertical"
+              sx={{ borderWidth: 1, borderColor: "#B9B9B9", marginRight: 3 }}
+            />
+            <text className="text-white font-semibold text-base">OTHERS</text>
           </div>
           <div className="grid grid-flow-col justify-start">
-            <div>
-              <img src={collo} />
-            </div>
-            <div className="grid grid-flow-row ml-4 gap-2 pt-2">
-              <text className="text-app-gray900 text-xl font-semibold">
-                COLLOBORATION
-              </text>
-              <text className="text-app-gray text-base ">
-                Clear Expectations & Transparent Operations since Employer has{" "}
-                <br /> lot to lose
-              </text>
-            </div>
-          </div>
-          <div className="grid grid-flow-col justify-start">
-            <div>
-              <img src={community} />
-            </div>
-            <div className="grid grid-flow-row ml-4 gap-2 pt-2">
-              <text className="text-app-gray900 text-xl font-semibold">
-                COMMUNITY
-              </text>
-              <text className="text-app-gray text-base ">
-                Consultants can grow and improve during their Career.
-                <br /> Opportunity to join Direct Client/Permanent Placement
-              </text>
-            </div>
+            <Divider
+              orientation="vertical"
+              sx={{ borderWidth: 1, borderColor: "#B9B9B9", marginRight: 3 }}
+            />
+            <text className="text-white font-semibold text-base">BENEFITS</text>
           </div>
         </div>
-        <div className="border border-app-border rounded-3xl">
-          <div className="flex items-center justify-center py-5 text-center">
-            <text className="text-app-gray900 text-2xl font-semibold ">
-              We compare with Others in the Industry?
-            </text>
-          </div>
-          <Divider />
-          <div className="p-6">
-            <text className="text-app-gray900 text-base font-semibold ">
-              Xenspire & Other Industries
-            </text>
-            <div className="grid grid-cols-2  gap-x-10 gap-y-5 mt-1">
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  Structured tiered fixed-fee <br /> program to define our share
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">% of Bill Rate</text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  Platform Driven
-                  <br /> Communication
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  Back & Forth Phone/Email
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  Ala Carte Services for
-                  <br /> Various Insurance types, <br />
-                  401K, Immigration, HSA etc.
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  Non-standard, but <br />
-                  predominantly based on a <br />
-                  tiered percentage cut
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  Open Forum Structure to
-                  <br /> communicate with other
-                  <br /> Consultants. All Metrics are <br />
-                  displayed openly across
-                  <br /> network.
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  Audit log and notes
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">
-                  All Consultants are part of
-                  <br /> larger Xenspire Community
-                  <br />
-                  program/network to yield all
-                  <br /> the benefits of being
-                  <br /> together.
-                </text>
-              </div>
-              <div className="grid grid-flow-col gap-3 justify-start">
-                <img src={checkBox} alt="checkbox" />
-                <text className="text-app-gray text-base">NO COMMUNITY</text>
-              </div>
+        {rows.map((row) => (
+          <div
+            key={row.feature}
+            className="grid grid-cols-4 px-3 border-t-2 border-t-app-border py-1">
+            <div>
+              <text>{row.feature}</text>
+            </div>
+            <div className="grid grid-flow-col justify-start">
+              <Divider
+                orientation="vertical"
+                sx={{ borderWidth: 1, borderColor: "#B9B9B9", marginRight: 2 }}
+              />
+              <text>{row.xenspire}</text>
+            </div>
+            <div className="grid grid-flow-col justify-start">
+              <Divider
+                orientation="vertical"
+                sx={{ borderWidth: 1, borderColor: "#B9B9B9", marginRight: 2 }}
+              />
+              <text>{row.others}</text>
+            </div>
+            <div className="grid grid-flow-col justify-start">
+              <Divider
+                orientation="vertical"
+                sx={{ borderWidth: 1, borderColor: "#B9B9B9", marginRight: 2 }}
+              />
+              <text>{row.benefits}</text>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

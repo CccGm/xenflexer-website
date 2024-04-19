@@ -7,6 +7,7 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
+      black: "#000000",
       app: {
         moss: "#4F7A21",
         moss200: "#CEEAB0",
@@ -15,6 +16,7 @@ module.exports = {
         border: "#D0D5DD",
         gray: "#475467",
         gray900: "#101828",
+        table: "#777a7e",
       },
     },
   },

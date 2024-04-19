@@ -21,21 +21,20 @@ export const Footer = () => {
           />
         </AvatarGroup>
 
-        <text className="text-app-gray900  text-5xl">
+        <text className="text-app-gray900  text-6xl font-semibold">
           Join the Revolution with XenFlexer
         </text>
-        <text className="text-app-gray text-lg ">
+        <text className="text-app-gray text-xl font-medium italic ">
           We're kicking off our journey in the IT industry, spearheading a new
-          era of freedom,
-          <br /> flexibility, and growth for consultants. Ready to redefine your
-          career? Even if you're not in <br />
-          IT, we want to hear from you! Let us know your industry, and join our
-          waiting list. Be the
-          <br /> first to experience how XenFlexer can transform your work life.
-          Sign up now, and we'll <br />
-          reach out as we expand into your field. Don't miss out on being part
-          of this
-          <br /> groundbreaking movement.
+          era of <br /> freedom, flexibility, and growth for consultants. Ready
+          to redefine your career? <br />
+          Even if you're not in IT, we want to hear from you! Let us know your
+          industry,
+          <br /> and join our waiting list. Be the first to experience how
+          XenFlexer can transform <br />
+          your work life. Sign up now, and we'll reach out as we expand into
+          your field.
+          <br /> Don't miss out on being part of this groundbreaking movement.
         </text>
         <div>
           <Button
