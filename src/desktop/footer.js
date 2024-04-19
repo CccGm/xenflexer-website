@@ -50,7 +50,7 @@ export const Footer = () => {
         </div>
       </div>
       {/* footer */}
-      <footer className="w-full px-28 mt-20 grid grid-flow-col items-center justify-between">
+      <footer className="w-full px-28 mt-20 mb-10 grid grid-flow-col items-center justify-between">
         <img src={logo} alt="logo" />
         <text style={{ color: "#667085" }}>
           © 2024 Xenspire. All rights reserved.
