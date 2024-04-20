@@ -7,12 +7,12 @@ import quality from "../assets/images/uil_server-network-alt.png";
 
 export const Values = () => {
   return (
-    <div className="p-20">
+    <div className="px-6 py-16 md:p-20">
       <div className="grid grid-flow-row text-center justify-center gap-4">
-        <text className="text-app-gray900 font-semibold text-4xl">
+        <text className="text-app-gray900 font-semibold text-3xl sm:text-4xl">
           Unlock More Value with Freedom and <br /> Transparency
         </text>
-        <text className="text-black text-xl mt-2">
+        <text className="text-black text-base sm:text-xl mt-2">
           Experience the power of choice and clarity with every opportunity,
           only at <br />
           XenFlexer. Powered by XenHire's precision matching, we offer an
@@ -27,7 +27,7 @@ export const Values = () => {
         </text>
       </div>
 
-      <div className="mt-3 grid  grid-cols-3 ">
+      <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         <div className="grid grid-flow-row justify-center text-center ">
           <div className="flex justify-center">
             <img src={closeloop} alt="closeloop" />
@@ -54,7 +54,7 @@ export const Values = () => {
         </div>
       </div>
 
-      <div className="mt-16 grid  grid-cols-2">
+      <div className="mt-8 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="grid grid-flow-row justify-center text-center ">
           <div className="flex justify-center">
             <img src={quality} alt="Quality" />

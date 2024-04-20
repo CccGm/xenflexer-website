@@ -8,7 +8,7 @@ import { Footer } from "./footer";
 
 export const Desktop = () => {
   return (
-    <div>
+    <div className="min-w-80">
       <Main />
       <Values />
       <Feature />

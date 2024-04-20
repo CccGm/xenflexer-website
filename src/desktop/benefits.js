@@ -7,7 +7,7 @@ import { Chip } from "@mui/material";
 
 export const Benefit = () => {
   return (
-    <div className="pb-10">
+    <div className="pb-20 px-5">
       <div className="mt-16 grid grid-flow-row text-center justify-center gap-4">
         <div>
           <Chip label="Benefits" variant="outlined" sx={{ color: "#3F621A" }} />
@@ -21,7 +21,7 @@ export const Benefit = () => {
           Paperwork!
         </text>
       </div>
-      <div className="grid  grid-cols-2 mt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-20">
         <div className="grid grid-flow-row justify-center text-center gap-3">
           <div className="flex justify-center">
             <img src={icon4} alt="icon4" />
@@ -45,7 +45,7 @@ export const Benefit = () => {
           </text>
         </div>
       </div>
-      <div className="grid  grid-cols-2 mt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 sm:mt-20">
         <div className="grid grid-flow-row justify-center text-center ">
           <div className="flex justify-center">
             <img src={icon2} alt="icon2" />

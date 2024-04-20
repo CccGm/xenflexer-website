@@ -4,7 +4,7 @@ import logo from "../assets/images/lOGO 1.png";
 
 export const Footer = () => {
   return (
-    <div>
+    <div className="px-5">
       <div className="mt-16 grid grid-flow-row text-center justify-center gap-4">
         <AvatarGroup max={3} sx={{ justifyContent: "center" }}>
           <Avatar
@@ -21,10 +21,10 @@ export const Footer = () => {
           />
         </AvatarGroup>
 
-        <text className="text-app-gray900  text-6xl font-semibold">
+        <text className="text-app-gray900  text-4xl sm:text-6xl font-semibold">
           Join the Revolution with XenFlexer
         </text>
-        <text className="text-app-gray text-xl font-medium italic ">
+        <text className="text-app-gray text-base sm:text-xl font-medium italic ">
           We're kicking off our journey in the IT industry, spearheading a new
           era of <br /> freedom, flexibility, and growth for consultants. Ready
           to redefine your career? <br />
@@ -50,7 +50,7 @@ export const Footer = () => {
         </div>
       </div>
       {/* footer */}
-      <footer className="w-full px-28 mt-20 mb-10 grid grid-flow-col items-center justify-between">
+      <footer className="w-full md:px-28 mt-20 mb-10 grid grid-flow-col items-center justify-between">
         <img src={logo} alt="logo" />
         <text style={{ color: "#667085" }}>
           © 2024 Xenspire. All rights reserved.
