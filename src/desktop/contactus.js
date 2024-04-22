@@ -17,12 +17,15 @@ export const ContactUs = () => {
     console.log("email", email);
     console.log("msg", msg);
     try {
-      const response = await axios.post("http://localhost:3000/api/register/", {
-        fname,
-        lname,
-        email,
-        msg,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/api/contactus/",
+        {
+          fname,
+          lname,
+          email,
+          msg,
+        }
+      );
 
       if (response.status === 200) {
         console.log("contact  succesfully");
