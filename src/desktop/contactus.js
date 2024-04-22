@@ -43,23 +43,7 @@ export const ContactUs = () => {
       <div className="grid grid-flow-col">
         <div className="p-10 bg-app-backGround hidden sm:grid">
           <div className="grid justify-center">
-            <img src={logo} alt="logo" />
-            <AvatarGroup
-              max={3}
-              sx={{ justifyContent: "center", marginTop: 3 }}>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250"
-              />
-              <Avatar
-                alt="Travis Howard"
-                src="https://eu.ui-avatars.com/api/?name=Ghelani+Mihir&size=250"
-              />
-              <Avatar
-                alt="Cindy Baker"
-                src="https://avatar.iran.liara.run/public/boy?username=Ash"
-              />
-            </AvatarGroup>
+            
           </div>
           <div className="grid justify-center text-center px-10">
             <text className="text-app-gray900 text-3xl font-semibold mt-5">

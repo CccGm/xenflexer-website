@@ -19,11 +19,17 @@ export const Register = () => {
   const [typeJob, setTypeJob] = React.useState("");
   const [interestedJob, setInterestedJob] = React.useState("");
   const [joinTeam, setJoinTeam] = React.useState("");
+  const [jobbType, setJobbType] = React.useState("");
 
   const job = [
     "Join with a new contract found by XenFlexer",
     "Join XenFlexer with a new contract I secure independently",
     "Join XenFlexer with my current ongoing project",
+  ];
+
+  const jobType = [
+    "Permanent Position",
+    "Contract Position",
   ];
 
   const handleSubmit = async (e) => {
@@ -34,6 +40,7 @@ export const Register = () => {
     console.log("typejob", typeJob);
     console.log("interestedJob", interestedJob);
     console.log("joinTeam", joinTeam);
+    console.log("jobbType", jobbType);
     try {
       const response = await axios.post("http://localhost:3000/api/register/", {
         name,
@@ -42,6 +49,7 @@ export const Register = () => {
         typeJob,
         interestedJob,
         joinTeam,
+        jobbType
       });
 
       if (response.status === 200) {
@@ -63,29 +71,22 @@ export const Register = () => {
     }
   };
 
+  const handleAccesCheckboxChangeJob = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setJobbType([...jobbType, value]); // Add
+    } else {
+      setJobbType(jobbType.filter((data) => data !== value)); // Remove
+    }
+  };
+
   return (
     <>
       <Header />
       <div className="grid grid-flow-col">
         <div className="p-10 bg-app-backGround hidden sm:grid">
           <div className="grid justify-center ">
-            <img src={logo} alt="logo" />
-            <AvatarGroup
-              max={3}
-              sx={{ justifyContent: "center", marginTop: 3 }}>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250"
-              />
-              <Avatar
-                alt="Travis Howard"
-                src="https://eu.ui-avatars.com/api/?name=Ghelani+Mihir&size=250"
-              />
-              <Avatar
-                alt="Cindy Baker"
-                src="https://avatar.iran.liara.run/public/boy?username=Ash"
-              />
-            </AvatarGroup>
+            
           </div>
           <div className="grid justify-center text-center px-10">
             <text className="text-app-gray900 text-3xl font-semibold mt-5">
@@ -183,23 +184,19 @@ export const Register = () => {
               <label className="text-app-gray700 text-sm font-medium pb-1">
                 Are you interested in permanent or contract job opportunities?*
               </label>
-              <RadioGroup
-                row
-                value={interestedJob}
-                onChange={(e) => setInterestedJob(e.target.value)}>
+              {jobType.map((options) => (
                 <FormControlLabel
-                  name="permanent"
-                  value={"permanent"}
-                  control={<Radio />}
-                  label="Permanent Positions"
+                  key={options}
+                  control={
+                    <Checkbox
+                      value={options}
+                      checked={joinTeam.includes(options)}
+                      onChange={handleAccesCheckboxChangeJob}
+                    />
+                  }
+                  label={options}
                 />
-                <FormControlLabel
-                  name="contract"
-                  value={"contract"}
-                  control={<Radio />}
-                  label="Contract Positions"
-                />
-              </RadioGroup>
+              ))}
             </div>
             <div className="grid mt-2">
               <label className="text-app-gray700 text-sm font-medium pb-1">
