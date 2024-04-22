@@ -15,6 +15,7 @@ module.exports = {
         moss700: "#3F621A",
         border: "#D0D5DD",
         gray: "#475467",
+        gray700: "#344054",
         gray900: "#101828",
         table: "#777a7e",
       },
