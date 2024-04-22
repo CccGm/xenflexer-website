@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar, AvatarGroup, Button } from "@mui/material";
+import axios from "axios";
 import logo from "../assets/images/lOGO 1.png";
 import { Header } from "./header";
 
@@ -9,12 +10,28 @@ export const ContactUs = () => {
   const [email, setEmail] = React.useState("");
   const [msg, setMsg] = React.useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("fname", fname);
     console.log("lname", lname);
     console.log("email", email);
     console.log("msg", msg);
+    try {
+      const response = await axios.post("http://localhost:3000/api/register/", {
+        fname,
+        lname,
+        email,
+        msg,
+      });
+
+      if (response.status === 200) {
+        console.log("contact  succesfully");
+      } else {
+        console.log("contact not save");
+      }
+    } catch (error) {
+      console.log("contact not save", error);
+    }
   };
 
   return (

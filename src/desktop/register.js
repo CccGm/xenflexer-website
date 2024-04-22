@@ -8,6 +8,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
+import axios from "axios";
 import logo from "../assets/images/lOGO 1.png";
 import { Header } from "./header";
 
@@ -25,7 +26,7 @@ export const Register = () => {
     "Join XenFlexer with my current ongoing project",
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("name", name);
     console.log("email", email);
@@ -33,6 +34,24 @@ export const Register = () => {
     console.log("typejob", typeJob);
     console.log("interestedJob", interestedJob);
     console.log("joinTeam", joinTeam);
+    try {
+      const response = await axios.post("http://localhost:3000/api/register/", {
+        name,
+        email,
+        no,
+        typeJob,
+        interestedJob,
+        joinTeam,
+      });
+
+      if (response.status === 200) {
+        console.log("register  succesfully");
+      } else {
+        console.log("register not save");
+      }
+    } catch (error) {
+      console.log("register not save", error);
+    }
   };
 
   const handleAccesCheckboxChange = (event) => {
