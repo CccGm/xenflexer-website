@@ -190,7 +190,7 @@ export const Register = () => {
                   control={
                     <Checkbox
                       value={options}
-                      checked={joinTeam.includes(options)}
+                      checked={jobbType.includes(options)}
                       onChange={handleAccesCheckboxChangeJob}
                     />
                   }
