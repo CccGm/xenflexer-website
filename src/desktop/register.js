@@ -67,8 +67,8 @@ export const Register = () => {
     <>
       <Header />
       <div className="grid grid-flow-col">
-        <div className="p-10 bg-app-backGround">
-          <div className="grid justify-center">
+        <div className="p-10 bg-app-backGround hidden sm:grid">
+          <div className="grid justify-center ">
             <img src={logo} alt="logo" />
             <AvatarGroup
               max={3}

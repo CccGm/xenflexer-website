@@ -46,7 +46,7 @@ export const Contact_Us = () => {
   return (
     <div>
       <Header />
-      <div className="grid justify-center text-center p-10 gap-3 bg-app-moss200">
+      <div className="justify-center text-center p-10 gap-3 bg-app-moss200 hidden sm:grid">
         <text className="text-app-gray900 font-semibold text-3xl">
           Contact With us today
         </text>
@@ -57,8 +57,8 @@ export const Contact_Us = () => {
       </div>
       <div>
         <form onSubmit={handleSubmit}>
-          <div className="px-32">
-            <div className="grid grid-flow-col gap-10">
+          <div className="px-5 sm:px-64">
+            <div className="grid grid-flow-row sm:grid-flow-col  sm:gap-10">
               <div className="grid mt-5">
                 <label className="text-app-moss500 text-sm font-medium">
                   First Name*
