@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Desktop } from "./desktop";
 import { Register } from "./desktop/register";
-import { ContactUp } from "./desktop/contactup";
+import { ContactUs } from "./desktop/contactus";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Desktop />} />
         <Route path="register" element={<Register />} />
-        <Route path="contactup" element={<ContactUp />} />
+        <Route path="contactus" element={<ContactUs />} />
         <Route path="*" element={<Navigate to={"/"} replace />} />
       </Routes>
     </BrowserRouter>
