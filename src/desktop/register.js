@@ -76,8 +76,8 @@ export const Register = () => {
   return (
     <>
       <Header />
-      <div className="grid grid-flow-col">
-        <div className="p-10 bg-app-backGround hidden sm:grid">
+      <div className="grid grid-flow-col bg-app-backGround">
+        <div className="p-10 hidden sm:grid">
           <div className="grid justify-center text-center px-10">
             <text className="text-app-gray900 text-xl font-extrabold mt-5">
               Disrupting the Enterprise Contracting Landscape

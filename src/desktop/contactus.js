@@ -41,8 +41,8 @@ export const ContactUs = () => {
   return (
     <>
       <Header />
-      <div className="grid grid-flow-col">
-        <div className="p-10 bg-app-backGround hidden sm:grid">
+      <div className="grid grid-flow-col bg-app-backGround">
+        <div className="p-10 hidden sm:grid">
           <div className="grid justify-center text-center px-10">
             <text className="text-app-gray900 text-2xl font-semibold mt-5">
               Unlock More Value with Freedom and Transparency
