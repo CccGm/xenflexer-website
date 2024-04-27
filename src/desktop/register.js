@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Avatar,
-  AvatarGroup,
   Button,
   Checkbox,
   FormControlLabel,
@@ -9,15 +7,15 @@ import {
   RadioGroup,
 } from "@mui/material";
 import axios from "axios";
-import logo from "../assets/images/lOGO 1.png";
+import signup from "../assets/images/signup.png";
 import { Header } from "./header";
+import { Footer } from "./footer";
 
 export const Register = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [no, setNo] = React.useState("");
   const [typeJob, setTypeJob] = React.useState("");
-  const [interestedJob, setInterestedJob] = React.useState("");
   const [joinTeam, setJoinTeam] = React.useState("");
   const [jobbType, setJobbType] = React.useState("");
 
@@ -27,10 +25,7 @@ export const Register = () => {
     "Join XenFlexer with my current ongoing project",
   ];
 
-  const jobType = [
-    "Permanent Position",
-    "Contract Position",
-  ];
+  const jobType = ["Permanent Position", "Contract Position"];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +33,6 @@ export const Register = () => {
     console.log("email", email);
     console.log("no", no);
     console.log("typejob", typeJob);
-    console.log("interestedJob", interestedJob);
     console.log("joinTeam", joinTeam);
     console.log("jobbType", jobbType);
     try {
@@ -47,9 +41,8 @@ export const Register = () => {
         email,
         no,
         typeJob,
-        interestedJob,
         joinTeam,
-        jobbType
+        jobbType,
       });
 
       if (response.status === 200) {
@@ -62,7 +55,7 @@ export const Register = () => {
     }
   };
 
-  const handleAccesCheckboxChange = (event) => {
+  const handleAccesCheckboxChangeTeam = (event) => {
     const { value, checked } = event.target;
     if (checked) {
       setJoinTeam([...joinTeam, value]); // Add
@@ -71,7 +64,7 @@ export const Register = () => {
     }
   };
 
-  const handleAccesCheckboxChangeJob = (event) => {
+  const handleAccesCheckboxChangeType = (event) => {
     const { value, checked } = event.target;
     if (checked) {
       setJobbType([...jobbType, value]); // Add
@@ -85,154 +78,161 @@ export const Register = () => {
       <Header />
       <div className="grid grid-flow-col">
         <div className="p-10 bg-app-backGround hidden sm:grid">
-          <div className="grid justify-center ">
-            
-          </div>
           <div className="grid justify-center text-center px-10">
-            <text className="text-app-gray900 text-3xl font-semibold mt-5">
-              Disrupting the Enterprise Contracting
-              <br /> Landscape
+            <text className="text-app-gray900 text-xl font-extrabold mt-5">
+              Disrupting the Enterprise Contracting Landscape
             </text>
-            <text className="text-app-gray text-lg italic font-medium mt-5">
-              Welcome to the XenFlexer Interest Signup, where <br /> we're
-              reshaping the future of enterprise contracting.
+            <text className="text-app-gray text-xs italic font-medium mt-5">
+              Welcome to the XenFlexer Interest Signup, where we're reshaping
+              the future of enterprise contracting.
               <br /> XenFlexer is at the forefront of revolutionizing the
-              <br />
-              contracting industry by offering unparalleled
-              <br /> flexibility, transparency, and opportunities for
-              <br /> consultants and clients alike. Whether you're a <br />
-              seasoned professional looking for entry-level or
-              <br /> advanced opportunities, or seeking the right blend of
-              <br /> permanent and contract positions, XenFlexer is your
-              <br /> gateway to a world where your skills are valued and <br />
-              your career aspirations are met. Sign up today to be
-              <br /> part of a community that's set on disrupting the
-              <br /> enterprise contracting landscape, ensuring a more
-              <br /> equitable, efficient, and empowering environment for
-              <br /> everyone involved.
+              contracting industry by offering unparalleled flexibility,
+              <br /> transparency, and opportunities for consultants and clients
+              alike. Whether you're a seasoned professional
+              <br /> looking for entry-level or advanced opportunities, or
+              seeking the right blend of permanent and contract
+              <br /> positions, XenFlexer is your gateway to a world where your
+              skills are valued and your career aspirations are met.
+              <br /> Sign up today to be part of a community that's set on
+              disrupting the enterprise contracting landscape, ensuring
+              <br /> a more equitable, efficient, and empowering environment for
+              everyone involved.
             </text>
+          </div>
+          <div className="justify-center items-center flex px-10">
+            <img src={signup} alt="signup" />
           </div>
         </div>
-        <div className="p-10 ">
-          <div>
-            <text className="text-app-gray900 font-semibold text-3xl">
-              XenFlexer Interest Signup
-            </text>
+        <div className="py-10 px-5 sm:pr-20">
+          <div className="border-4 rounded-3xl border-app-moss500 p-3">
+            <div className="flex justify-center mt-3">
+              <text className="text-app-gray900 font-semibold text-3xl">
+                XenFlexer Interest Signup
+              </text>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="grid mt-8 gap-6 justify-center">
+                <input
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter your name"
+                  className="border p-2 border-app-border rounded-md w-80"
+                />
+
+                <input
+                  required
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="border p-2 border-app-border rounded-md w-80"
+                />
+
+                <input
+                  required
+                  type="tel"
+                  value={no}
+                  onChange={(e) => setNo(e.target.value)}
+                  placeholder="Enter your phone number"
+                  className="border p-2 border-app-border rounded-md w-80"
+                />
+              </div>
+              <div className="grid mt-6 justify-center items-center text-center">
+                <label className="text-app-gray700 text-base font-medium pb-1">
+                  Type of job opportunities interested in?*
+                </label>
+                <RadioGroup
+                  row
+                  value={typeJob}
+                  onChange={(e) => setTypeJob(e.target.value)}>
+                  <FormControlLabel
+                    name="non-entry"
+                    value={"non-entry"}
+                    control={<Radio size="small" color="success" />}
+                    label={
+                      <span style={{ fontSize: 13 }}>
+                        Non-Entry-Level Positions
+                      </span>
+                    }
+                    sx={{ color: "#344054" }}
+                  />
+                  <FormControlLabel
+                    name="entry"
+                    value={"entry"}
+                    control={<Radio size="small" color="success" />}
+                    label={
+                      <span style={{ fontSize: 13 }}>
+                        Entry-Level Positions
+                      </span>
+                    }
+                    sx={{ color: "#344054" }}
+                  />
+                </RadioGroup>
+              </div>
+              <div className="grid mt-2 justify-center items-center">
+                <label className="text-app-gray700 text-base font-medium pb-1">
+                  Type of positons interested in?*
+                </label>
+                {jobType.map((options) => (
+                  <FormControlLabel
+                    key={options}
+                    control={
+                      <Checkbox
+                        size="small"
+                        value={options}
+                        checked={jobbType.includes(options)}
+                        onChange={handleAccesCheckboxChangeType}
+                        color="success"
+                      />
+                    }
+                    label={<span style={{ fontSize: 13 }}>{options}</span>}
+                  />
+                ))}
+              </div>
+              <div className="grid mt-2 justify-center items-center ">
+                <label className="text-app-gray700 text-base font-medium">
+                  Your prefer to join our team?
+                </label>
+                <label className="text-app-gray700 text-sm font-medium pb-1">
+                  (Applicable only if you selected "Contract Positions"
+                  <br /> above.)*
+                </label>
+                {job.map((options) => (
+                  <FormControlLabel
+                    key={options}
+                    control={
+                      <Checkbox
+                        size="small"
+                        value={options}
+                        checked={joinTeam.includes(options)}
+                        onChange={handleAccesCheckboxChangeTeam}
+                        color="success"
+                      />
+                    }
+                    label={<span style={{ fontSize: 13 }}>{options}</span>}
+                  />
+                ))}
+              </div>
+              <div className="flex justify-center pb-5">
+                <Button
+                  variant="contained"
+                  sx={{
+                    color: "#ffffff",
+                    fontWeight: 600,
+                    textTransform: "none",
+                    bgcolor: "#4F7A21",
+                    marginTop: 3,
+                  }}
+                  type="submit">
+                  Get Start
+                </Button>
+              </div>
+            </form>
           </div>
-          <form onSubmit={handleSubmit}>
-            <div className="grid mt-8">
-              <label className="text-app-gray700 text-sm font-medium">
-                Full Name*
-              </label>
-              <input
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Enter your name"
-                className="border p-2 border-app-border rounded-md w-80"
-              />
-            </div>
-            <div className="grid mt-3">
-              <label className="text-app-gray700 text-sm font-medium">
-                Email*
-              </label>
-              <input
-                required
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="border p-2 border-app-border rounded-md w-80"
-              />
-            </div>
-            <div className="grid mt-3">
-              <label className="text-app-gray700 text-sm font-medium">
-                Phone number*
-              </label>
-              <input
-                required
-                type="tel"
-                value={no}
-                onChange={(e) => setNo(e.target.value)}
-                placeholder="Enter your phone number"
-                className="border p-2 border-app-border rounded-md w-80"
-              />
-            </div>
-            <div className="grid mt-3">
-              <label className="text-app-gray700 text-sm font-medium pb-1">
-                What type of job opportunities are you most interested in?*
-              </label>
-              <RadioGroup
-                row
-                value={typeJob}
-                onChange={(e) => setTypeJob(e.target.value)}>
-                <FormControlLabel
-                  name="non-entry"
-                  value={"non-entry"}
-                  control={<Radio />}
-                  label="Non-Entry-Level Positions"
-                />
-                <FormControlLabel
-                  name="entry"
-                  value={"entry"}
-                  control={<Radio />}
-                  label="Entry-Level Positions"
-                />
-              </RadioGroup>
-            </div>
-            <div className="grid mt-2">
-              <label className="text-app-gray700 text-sm font-medium pb-1">
-                Are you interested in permanent or contract job opportunities?*
-              </label>
-              {jobType.map((options) => (
-                <FormControlLabel
-                  key={options}
-                  control={
-                    <Checkbox
-                      value={options}
-                      checked={jobbType.includes(options)}
-                      onChange={handleAccesCheckboxChangeJob}
-                    />
-                  }
-                  label={options}
-                />
-              ))}
-            </div>
-            <div className="grid mt-2">
-              <label className="text-app-gray700 text-sm font-medium pb-1">
-                How would you prefer to join our team? (Applicable only if you
-                <br />
-                selected "Contract Positions" above.)*
-              </label>
-              {job.map((options) => (
-                <FormControlLabel
-                  key={options}
-                  control={
-                    <Checkbox
-                      value={options}
-                      checked={joinTeam.includes(options)}
-                      onChange={handleAccesCheckboxChange}
-                    />
-                  }
-                  label={options}
-                />
-              ))}
-            </div>
-            <Button
-              variant="contained"
-              sx={{
-                color: "#ffffff",
-                fontWeight: 600,
-                textTransform: "none",
-                bgcolor: "#4F7A21",
-                marginTop: 3,
-              }}
-              type="submit">
-              Get Start
-            </Button>
-          </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
