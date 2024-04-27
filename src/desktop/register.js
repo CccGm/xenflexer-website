@@ -105,19 +105,21 @@ export const Register = () => {
         </div>
         <div className="py-10 px-5 sm:pr-20">
           <div className="border-4 rounded-3xl border-app-moss500 p-3">
-            <div className="flex justify-center mt-3">
+            <div className="flex justify-center mt-3 px-6">
               <text className="text-app-gray900 font-semibold text-3xl">
                 XenFlexer Interest Signup
               </text>
             </div>
-            <form onSubmit={handleSubmit}>
-              <div className="grid mt-8 gap-6 justify-center">
+            <form
+              onSubmit={handleSubmit}
+              className="px-5 sm:px-0 sm:ml-12 lg:ml-24 sm:mr-5">
+              <div className="grid mt-8 gap-6 ">
                 <input
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter your name"
-                  className="border p-2 border-app-border rounded-md w-80"
+                  className="border p-2 border-app-border rounded-md sm:w-80"
                 />
 
                 <input
@@ -126,7 +128,7 @@ export const Register = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="border p-2 border-app-border rounded-md w-80"
+                  className="border p-2 border-app-border rounded-md sm:w-80"
                 />
 
                 <input
@@ -135,10 +137,10 @@ export const Register = () => {
                   value={no}
                   onChange={(e) => setNo(e.target.value)}
                   placeholder="Enter your phone number"
-                  className="border p-2 border-app-border rounded-md w-80"
+                  className="border p-2 border-app-border rounded-md sm:w-80"
                 />
               </div>
-              <div className="grid mt-6 justify-center items-center text-center">
+              <div className="grid mt-6  items-center ">
                 <label className="text-app-gray700 text-base font-medium pb-1">
                   Type of job opportunities interested in?*
                 </label>
@@ -170,7 +172,7 @@ export const Register = () => {
                   />
                 </RadioGroup>
               </div>
-              <div className="grid mt-2 justify-center items-center">
+              <div className="grid mt-2  items-center">
                 <label className="text-app-gray700 text-base font-medium pb-1">
                   Type of positons interested in?*
                 </label>
@@ -190,7 +192,7 @@ export const Register = () => {
                   />
                 ))}
               </div>
-              <div className="grid mt-2 justify-center items-center ">
+              <div className="grid mt-2  items-center ">
                 <label className="text-app-gray700 text-base font-medium">
                   Your prefer to join our team?
                 </label>
@@ -214,7 +216,7 @@ export const Register = () => {
                   />
                 ))}
               </div>
-              <div className="flex justify-center pb-5">
+              <div className="sm:-ml-12 lg:-ml-24 pb-5 flex justify-center">
                 <Button
                   variant="contained"
                   sx={{

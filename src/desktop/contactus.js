@@ -64,7 +64,7 @@ export const ContactUs = () => {
         </div>
         <div className="py-10 px-5 sm:pr-20">
           <div className="border-4 rounded-3xl border-app-moss500 p-3">
-            <div className="grid gap-2 mt-3 justify-center">
+            <div className="grid gap-2 mt-3 justify-center px-6">
               <text className="text-app-gray900 font-semibold text-3xl">
                 Contact Sales
               </text>
@@ -74,7 +74,7 @@ export const ContactUs = () => {
                 <br /> we can.
               </text>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="px-5">
               <div className="grid gap-2 mt-8 justify-center">
                 <label className="text-app-gray700 text-sm font-medium">
                   First Name*
@@ -84,7 +84,7 @@ export const ContactUs = () => {
                   value={fname}
                   onChange={(e) => setFName(e.target.value)}
                   placeholder="Enter your first name"
-                  className="border p-2 border-app-border rounded-md w-80"
+                  className="border p-2 border-app-border rounded-md sm:w-80"
                 />
               </div>
               <div className="grid gap-2 mt-5 justify-center">
@@ -96,7 +96,7 @@ export const ContactUs = () => {
                   value={lname}
                   onChange={(e) => setLName(e.target.value)}
                   placeholder="Enter your last name"
-                  className="border p-2 border-app-border rounded-md w-80"
+                  className="border p-2 border-app-border rounded-md sm:w-80"
                 />
               </div>
               <div className="grid gap-2 mt-5 justify-center">
@@ -109,7 +109,7 @@ export const ContactUs = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your work email"
-                  className="border p-2 border-app-border rounded-md w-80"
+                  className="border p-2 border-app-border rounded-md sm:w-80"
                 />
               </div>
               <div className="grid gap-2 mt-5 justify-center">
@@ -122,7 +122,7 @@ export const ContactUs = () => {
                   value={msg}
                   onChange={(e) => setMsg(e.target.value)}
                   placeholder="Enter your message"
-                  className="border p-2 border-app-border rounded-md w-80"
+                  className="border p-2 border-app-border rounded-md sm:w-80"
                 />
               </div>
               <div className="flex justify-center pb-8">
@@ -134,7 +134,6 @@ export const ContactUs = () => {
                     textTransform: "none",
                     bgcolor: "#4F7A21",
                     marginTop: 3,
-                    width: 320,
                   }}
                   type="submit">
                   Get Started
