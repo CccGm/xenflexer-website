@@ -132,7 +132,7 @@ export const Header = () => {
             color: "#ffffff",
             fontWeight: 600,
             textTransform: "none",
-            bgcolor: "#4F7A21",
+            bgcolor: "#669F2A",
           }}>
           Hire
         </Button>

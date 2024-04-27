@@ -10,8 +10,11 @@ import axios from "axios";
 import signup from "../assets/images/signup.png";
 import { Header } from "./header";
 import { Footer } from "./footer";
+import { useLocation } from "react-router-dom";
 
 export const Register = () => {
+  const history = useLocation();
+  console.log(history.state);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [no, setNo] = React.useState("");
@@ -104,7 +107,13 @@ export const Register = () => {
           </div>
         </div>
         <div className="py-10 px-5 sm:pr-20">
-          <div className="border-4 rounded-3xl border-app-moss500 p-3 bg-white">
+          <div
+            className="rounded-3xl border-app-moss500 p-3 bg-white shadow-2xl"
+            style={{
+              borderWidth: 4,
+              borderTopWidth: 6,
+              borderRightWidth: 6,
+            }}>
             <div className="flex justify-center mt-3 px-6">
               <text className="text-app-gray900 font-semibold text-3xl">
                 XenFlexer Interest Signup
@@ -140,9 +149,10 @@ export const Register = () => {
                   className="border p-2 border-app-border rounded-md sm:w-80"
                 />
               </div>
-              <div className="grid mt-6  items-center ">
+              <div className="grid mt-8  items-center ">
                 <label className="text-app-gray700 text-base font-medium pb-1">
-                  Type of job opportunities interested in?*
+                  Type of job opportunities interested in?
+                  <span style={{ color: "red" }}>*</span>
                 </label>
                 <RadioGroup
                   row
@@ -172,9 +182,10 @@ export const Register = () => {
                   />
                 </RadioGroup>
               </div>
-              <div className="grid mt-2  items-center">
+              <div className="grid mt-5  items-center">
                 <label className="text-app-gray700 text-base font-medium pb-1">
-                  Type of positons interested in?*
+                  Type of positons interested in?
+                  <span style={{ color: "red" }}>*</span>
                 </label>
                 {jobType.map((options) => (
                   <FormControlLabel
@@ -192,13 +203,13 @@ export const Register = () => {
                   />
                 ))}
               </div>
-              <div className="grid mt-2  items-center ">
+              <div className="grid mt-5  items-center ">
                 <label className="text-app-gray700 text-base font-medium">
                   Your prefer to join our team?
                 </label>
                 <label className="text-app-gray700 text-sm font-medium pb-1">
-                  (Applicable only if you selected "Contract Positions"
-                  <br /> above.)*
+                  (Applicable only if you selected "Contract Positions" above.)
+                  <span style={{ color: "red" }}>*</span>
                 </label>
                 {job.map((options) => (
                   <FormControlLabel

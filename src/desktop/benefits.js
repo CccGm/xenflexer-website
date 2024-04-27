@@ -9,9 +9,6 @@ export const Benefit = () => {
   return (
     <div className="pb-20 px-5">
       <div className="mt-16 grid grid-flow-row text-center justify-center gap-4">
-        <div>
-          <Chip label="Benefits" variant="outlined" sx={{ color: "#3F621A" }} />
-        </div>
         <text className="text-app-gray900 font-semibold text-4xl">
           Benefits
         </text>

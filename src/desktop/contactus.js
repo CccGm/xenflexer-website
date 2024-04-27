@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
 import { Header } from "./header";
-import sales from "../assets/images/sales.png";
+import sales from "../assets/images/Objects.png";
 import { Footer } from "./footer";
 
 export const ContactUs = () => {
@@ -47,7 +47,7 @@ export const ContactUs = () => {
             <text className="text-app-gray900 text-2xl font-semibold mt-5">
               Unlock More Value with Freedom and Transparency
             </text>
-            <text className="text-black text-xs font-normal mt-5">
+            <text className="text-black text-xs font-normal -mt-5">
               Experience the power of choice and clarity with every opportunity,
               only at
               <br /> XenFlexer. Powered by XenHire's precision matching, we
@@ -63,7 +63,9 @@ export const ContactUs = () => {
           </div>
         </div>
         <div className="py-10 px-5 sm:pr-20">
-          <div className="border-4 rounded-3xl border-app-moss500 p-3 bg-white">
+          <div
+            className="rounded-3xl border-app-moss500 p-3 bg-white shadow-2xl"
+            style={{ borderWidth: 4, borderTopWidth: 6, borderRightWidth: 6 }}>
             <div className="grid gap-2 mt-3 justify-center px-6">
               <text className="text-app-gray900 font-semibold text-3xl">
                 Contact Sales
@@ -77,7 +79,7 @@ export const ContactUs = () => {
             <form onSubmit={handleSubmit} className="px-5">
               <div className="grid gap-2 mt-8 justify-center">
                 <label className="text-app-gray700 text-sm font-medium">
-                  First Name*
+                  First Name<span style={{ color: "red" }}>*</span>
                 </label>
                 <input
                   required
@@ -89,7 +91,7 @@ export const ContactUs = () => {
               </div>
               <div className="grid gap-2 mt-5 justify-center">
                 <label className="text-app-gray700 text-sm font-medium">
-                  Last Name*
+                  Last Name<span style={{ color: "red" }}>*</span>
                 </label>
                 <input
                   required
@@ -101,7 +103,7 @@ export const ContactUs = () => {
               </div>
               <div className="grid gap-2 mt-5 justify-center">
                 <label className="text-app-gray700 text-sm font-medium">
-                  Work Email*
+                  Work Email<span style={{ color: "red" }}>*</span>
                 </label>
                 <input
                   required
@@ -114,7 +116,7 @@ export const ContactUs = () => {
               </div>
               <div className="grid gap-2 mt-5 justify-center">
                 <label className="text-app-gray700 text-sm font-medium">
-                  Message*
+                  Message<span style={{ color: "red" }}>*</span>
                 </label>
                 <textarea
                   required

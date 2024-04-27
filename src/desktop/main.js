@@ -1,10 +1,14 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
 import line from "../assets/images/Line pattern.png";
-import profile from "../assets/images/Untitled design (5) 1.png";
+// import profile from "../assets/images/Untitled design (5) 1.png";
+import image_6 from "../assets/images/Frame 6.png";
 import { Header } from "./header";
+import { useNavigate } from "react-router-dom";
 
 export const Main = () => {
+  const navigation = useNavigate();
+  const [email, setEmail] = React.useState("");
   return (
     <div>
       <Header />
@@ -27,6 +31,8 @@ export const Main = () => {
           <div className="flex justify-center mt-10">
             <div className="grid grid-flow-row">
               <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="bg-white mr-7 rounded-lg p-2 min-w-36"
               />
@@ -48,7 +54,8 @@ export const Main = () => {
                 textTransform: "none",
                 bgcolor: "#669F2A",
                 height: 42,
-              }}>
+              }}
+              onClick={() => navigation("/register", { state: email })}>
               Get Started
             </Button>
           </div>
@@ -62,12 +69,14 @@ export const Main = () => {
               </text>
             </div>
             <div className="flex justify-center ">
-              <img src={profile} alt="people" style={{ width: 700 }} />
+              <img src={image_6} alt="people" style={{ width: 700 }} />
             </div>
-            <div className="grid grid-flow-col text-center pl-8 sm:pl-10 pb-5">
-              <text className="text-app-gray900 text-lg font-semibold">IT</text>
-              <text className="text-app-gray900 text-lg font-semibold">
-                Helth Care
+            <div className="grid grid-flow-col text-center mt-3 sm:pl-10 pb-5">
+              <text className="text-app-gray900 text-2xl font-semibold">
+                IT
+              </text>
+              <text className="text-app-gray900 text-2xl font-semibold">
+                Healthcare
               </text>
             </div>
           </Box>
@@ -78,7 +87,7 @@ export const Main = () => {
       <img
         src={line}
         alt="line1"
-        className="absolute bottom-0 left-0 hidden lg:flex"
+        className="absolute -bottom-80 left-0 hidden lg:flex"
       />
       <img
         src={line}
