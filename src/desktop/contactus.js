@@ -63,7 +63,7 @@ export const ContactUs = () => {
           </div>
         </div>
         <div className="py-10 px-5 sm:pr-20">
-          <div className="border-4 rounded-3xl border-app-moss500 p-3">
+          <div className="border-4 rounded-3xl border-app-moss500 p-3 bg-white">
             <div className="grid gap-2 mt-3 justify-center px-6">
               <text className="text-app-gray900 font-semibold text-3xl">
                 Contact Sales
