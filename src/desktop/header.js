@@ -13,9 +13,11 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/lOGO 1.png";
 
 export const Header = () => {
+  const navigation = useNavigate();
   const [drawer, setDrawer] = React.useState(false);
 
   const toggleDrawer = (open) => {
@@ -37,41 +39,133 @@ export const Header = () => {
                 <ClearOutlined />
               </IconButton>
             </div>
+            {/* main list */}
             <List className="w-64 sm:w-80">
-              {["Home", "Partners", "Resources", "Contact Us"].map(
-                (text, index) => (
-                  <ListItem key={index}>
-                    <Button
-                      fullWidth
-                      sx={{
-                        borderWidth: 1,
-                        bgcolor: "#4F7A21",
-                        borderRadius: 3,
-                      }}>
-                      <ListItemText primary={text} sx={{ color: "#ffffff" }} />
-                    </Button>
-                  </ListItem>
-                )
-              )}
+              <ListItem>
+                <Button
+                  fullWidth
+                  sx={{
+                    borderWidth: 1,
+                    bgcolor: "#4F7A21",
+                    borderRadius: 3,
+                  }}
+                  onClick={() => navigation("/")}>
+                  <ListItemText primary={"Home"} sx={{ color: "#ffffff" }} />
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Button
+                  fullWidth
+                  sx={{
+                    borderWidth: 1,
+                    bgcolor: "#4F7A21",
+                    borderRadius: 3,
+                  }}
+                  disabled>
+                  <ListItemText
+                    primary={"Partners"}
+                    sx={{ color: "#475467" }}
+                  />
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Button
+                  fullWidth
+                  sx={{
+                    borderWidth: 1,
+                    bgcolor: "#4F7A21",
+                    borderRadius: 3,
+                  }}
+                  disabled>
+                  <ListItemText
+                    primary={"Resources"}
+                    sx={{ color: "#475467" }}
+                  />
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Button
+                  fullWidth
+                  sx={{
+                    borderWidth: 1,
+                    bgcolor: "#4F7A21",
+                    borderRadius: 3,
+                  }}
+                  onClick={() => navigation("/contactus")}>
+                  <ListItemText
+                    primary={"Contact Us"}
+                    sx={{ color: "#ffffff" }}
+                  />
+                </Button>
+              </ListItem>
             </List>
             <Divider />
+            {/* flexer list */}
             <List className="w-64 sm:w-80 ">
-              {["Flexer", "Client", "Hire", "Register", "Login"].map(
-                (text, index) => (
-                  <ListItem key={index}>
-                    <Button
-                      fullWidth
-                      sx={{
-                        borderWidth: 1,
-                        bgcolor: "#4F7A21",
-                        borderRadius: 3,
-                      }}>
-                      <ListItemText primary={text} sx={{ color: "#ffffff" }} />
-                    </Button>
-                  </ListItem>
-                )
-              )}
+              <ListItem>
+                <ListItemText
+                  primary={"Flexer"}
+                  primaryTypographyProps={{
+                    fontWeight: 600,
+                    color: "#344054",
+                    fontSize: 16,
+                  }}
+                />
+              </ListItem>
+              <ListItem>
+                <Button
+                  fullWidth
+                  sx={{
+                    borderWidth: 1,
+                    bgcolor: "#4F7A21",
+                    borderRadius: 3,
+                  }}
+                  onClick={() => navigation("/register")}>
+                  <ListItemText
+                    primary={"Register"}
+                    sx={{ color: "#ffffff" }}
+                  />
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Button
+                  fullWidth
+                  sx={{
+                    borderWidth: 1,
+                    bgcolor: "#4F7A21",
+                    borderRadius: 3,
+                  }}
+                  disabled>
+                  <ListItemText primary={"Login"} sx={{ color: "#475467" }} />
+                </Button>
+              </ListItem>
             </List>
+            <Divider />
+            {/* client list */}
+            <List className="w-64 sm:w-80 ">
+              <ListItem>
+                <ListItemText
+                  primary={"Client"}
+                  primaryTypographyProps={{
+                    fontWeight: 600,
+                    color: "#344054",
+                    fontSize: 16,
+                  }}
+                />
+              </ListItem>
+              <ListItem>
+                <Button
+                  fullWidth
+                  sx={{
+                    borderWidth: 1,
+                    bgcolor: "#4F7A21",
+                    borderRadius: 3,
+                  }}>
+                  <ListItemText primary={"Hire"} sx={{ color: "#ffffff" }} />
+                </Button>
+              </ListItem>
+            </List>
+            <Divider />
           </div>
         </Drawer>
       </div>
@@ -84,21 +178,21 @@ export const Header = () => {
       </div>
 
       <ul className="hidden lg:grid grid-flow-col  gap-8 ">
-        <li className="text-app-gray font-bold">
-          <a href="#home">Home</a>
+        <li className="text-app-gray font-bold cursor-pointer">
+          <a onClick={() => navigation("/")}>Home</a>
         </li>
-        <li className="text-app-gray font-bold">
-          <a href="#partners">
+        <li className="text-app-border font-bold">
+          <a>
             Partners <KeyboardArrowDownOutlined />
           </a>
         </li>
-        <li className="text-app-gray font-bold">
-          <a href="#resources">
+        <li className="text-app-border font-bold">
+          <a>
             Resources <KeyboardArrowDownOutlined />
           </a>
         </li>
-        <li className="text-app-gray font-bold">
-          <a href="#contactUs">Contact Us</a>
+        <li className="text-app-gray font-bold cursor-pointer">
+          <a onClick={() => navigation("/contactus")}>Contact Us</a>
         </li>
       </ul>
 
@@ -111,7 +205,8 @@ export const Header = () => {
             fontWeight: 600,
             textTransform: "none",
             bgcolor: "#669F2A",
-          }}>
+          }}
+          onClick={() => navigation("/register")}>
           Register
         </Button>
         <Button
@@ -122,6 +217,7 @@ export const Header = () => {
             textTransform: "none",
             borderColor: "#D0D5DD",
           }}
+          disabled
           variant="outlined">
           Login
         </Button>
